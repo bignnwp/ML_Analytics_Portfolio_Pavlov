@@ -6,7 +6,7 @@
 *   **ML:** Scikit-learn, XGBoost, LightGBM, CatBoost
 *   **Анализ данных:** Pandas, NumPy, SciPy
 *   **Визуализация:** Matplotlib, Seaborn, Plotly
-*   **Инструменты:** Git, Docker, Streamlit, FastAPI, Power BI
+*   **Инструменты:** Git, Docker, Streamlit, FastAPI, Power BI, Power BI
 
 ## **Проект 1: Прогнозирование оттока клиентов банка**  
 
