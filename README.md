@@ -103,4 +103,4 @@ https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scroll
 ## Контакты
 Готов к обсуждению вакансий и интересных задач!
 *   Email: spavlov117@gmail.com
-*   Ссылка на моё резюме: https://hh.ru/resume/9e0d0ae4ff0fd7a06c0039ed1f6e6267626f56
+*   Ссылка на моё резюме: https://disk.yandex.ru/d/Ewk8q2Xq53od7g
