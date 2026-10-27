@@ -2,47 +2,47 @@
 
 ## Файлы
 
-- \`hypothesis_test_results.csv\` — агрегированные результаты трёх статистических проверок.
-- \`payment_distribution.csv\` — число и доля транзакций по типу клиента и способу оплаты.
-- \`../notebooks/supermarket_hypothesis_testing.ipynb\` — воспроизводимый Python-анализ.
-- \`../data/supermarket_sales.csv\` — используемый набор данных.
+- `hypothesis_test_results.csv` — агрегированные результаты трёх статистических проверок.
+- `payment_distribution.csv` — число и доля транзакций по типу клиента и способу оплаты.
+- `../notebooks/supermarket_hypothesis_testing.ipynb` — воспроизводимый Python-анализ.
+- `../data/supermarket_sales.csv` — используемый набор данных.
 
 ## Загрузка в Power BI Desktop
 
-1. Открой дашборд \`Дашборд_продажи_супермаркет.pbix\`.
+1. Открой дашборд `Дашборд_продажи_супермаркет.pbix`.
 2. Выбери **Главная → Получить данные → Текст/CSV**.
-3. Импортируй \`hypothesis_test_results.csv\` и \`payment_distribution.csv\` из папки \`powerbi\`, затем нажми **Загрузить**.
+3. Импортируй `hypothesis_test_results.csv` и `payment_distribution.csv` из папки `powerbi`, затем нажми **Загрузить**.
 4. Создай новую страницу отчёта с названием **Hypothesis Testing**.
 
 ## Рекомендуемая компоновка
 
 ### Таблица результатов
 Добавь визуал «Таблица» и поля:
-- \`Test_ID\`, \`Hypothesis\`, \`Test\`
-- \`N_A\`, \`N_B\`, \`Mean_A\`, \`Mean_B\`
-- \`Difference_A_minus_B\`, \`CI95_Lower\`, \`CI95_Upper\`
-- \`P_Value\`, \`P_Value_Holm\`, \`Effect_Size\`, \`Significant_After_Holm\`, \`Conclusion\`
+- `Test_ID`, `Hypothesis`, `Test`
+- `N_A`, `N_B`, `Mean_A`, `Mean_B`
+- `Difference_A_minus_B`, `CI95_Lower`, `CI95_Upper`
+- `P_Value`, `P_Value_Holm`, `Effect_Size`, `Significant_After_Holm`, `Conclusion`
 
-Формат p-value и доверительных интервалов — 3–4 знака после запятой (для очень малых p-value лучше использовать научную запись). Для \`P_Value\` и \`P_Value_Holm\` установи тип данных **Десятичное число**, формат — десятичный.
+Формат p-value и доверительных интервалов — 3–4 знака после запятой (для очень малых p-value лучше использовать научную запись). Для `P_Value` и `P_Value_Holm` установи тип данных **Десятичное число**, формат — десятичный.
 
 ### График распределения способов оплаты
-Из \`payment_distribution.csv\` создай 100%-ную линейчатую диаграмму с:
-- Ось Y: \`Customer type\`
-- Легенда: \`Payment\`
-- Значение: \`Share within customer type (%)\`
+Из `payment_distribution.csv` создай 100%-ную линейчатую диаграмму с:
+- Ось Y: `Customer type`
+- Легенда: `Payment`
+- Значение: `Share within customer type (%)`
 
-Для сравнения абсолютного количества транзакций вместо доли используй \`Transactions\`.
+Для сравнения абсолютного количества транзакций вместо доли используй `Transactions`.
 
 ### KPI
 Можно добавить карточку «Количество статистически значимых проверок». Создай меру DAX:
 
-\`\`\`dax
+```dax
 Significant Tests =
 CALCULATE(
     COUNTROWS('hypothesis_test_results'),
     'hypothesis_test_results'[Significant_After_Holm] = TRUE()
 )
-\`\`\`
+```
 
 Имя таблицы в DAX должно совпадать с фактическим именем, присвоенным Power BI при загрузке CSV.
 
@@ -58,4 +58,8 @@ CSV с результатами содержит заранее рассчита
 
 ## Воспроизводимость
 
-Запусти ноутбук \`notebooks/supermarket_hypothesis_testing.ipynb\`. Он сформирует \`hypothesis_test_results.csv\` и \`payment_distribution.csv\`, пригодные для загрузки в Power BI.
+Запусти ноутбук `notebooks/supermarket_hypothesis_testing.ipynb`. Он сформирует `hypothesis_test_results.csv` и `payment_distribution.csv`, пригодные для загрузки в Power BI.
+
+## Источник набора данных
+
+Использован открытый набор Supermarket Sales: [selva86/datasets/supermarket_sales.csv](https://github.com/selva86/datasets/blob/master/supermarket_sales.csv). Копия, используемая ноутбуком, хранится в `data/supermarket_sales.csv`.
