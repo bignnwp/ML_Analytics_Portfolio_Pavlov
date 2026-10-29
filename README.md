@@ -43,8 +43,7 @@ Python, Pandas, Scikit-learn, XGBoost, SHAP, Matplotlib/Seaborn для визу�
 
 **Навыки:** Обработка и очистка данных, feature engineering, визуализация, статистический анализ.
 
-**Ссылка на код проекта (+графики, диаграммы, таблицы и т. п.):** 
-https://colab.research.google.com/drive/1XDvNfTG9iemcfQMTIgv5-kosJW-uY8n_?usp=sharing
+**Ссылка на код проекта (+графики, диаграммы, таблицы и т. п.):** https://colab.research.google.com/drive/1XDvNfTG9iemcfQMTIgv5-kosJW-uY8n_?usp=sharing
 
 ## **Проект 3: Прогнозирование сердечно-сосудистых заболеваний**
 
@@ -60,8 +59,7 @@ https://colab.research.google.com/drive/1XDvNfTG9iemcfQMTIgv5-kosJW-uY8n_?usp=sh
 
 **Результат:** Построена модель Random Forest с высоким Recall, позволяющая идентифицировать значительную долю пациентов с риском сердечно-сосудистых заболеваний. Модель может быть использована для поддержки врачебных решений и раннего назначения профилактических мер.
 
-**Ссылка на код проекта (+графики, диаграммы, таблицы и т. п.):** 
-https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scrollTo=0649b98e-a302-4e05-859e-548b06ea2bd4
+**Ссылка на код проекта (+графики, диаграммы, таблицы и т. п.):** https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scrollTo=0649b98e-a302-4e05-859e-548b06ea2bd4
 
 ## Проект 4: Аналитический дашборд продаж супермаркета (Power BI)
 
@@ -112,8 +110,6 @@ https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scroll
 
 Запись с городской камеры наблюдения (Иркутск).
 
----
-
 ## Ключевые возможности
 
 - Мультиобъектный трекинг с сохранением ID объектов
@@ -122,8 +118,6 @@ https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scroll
 - Генерация тепловой карты интенсивности движения
 - Изменение цвета объектов после пересечения линии
 - Чистая объектно-ориентированная архитектура
-
----
 
 ## Архитектура
 
@@ -134,8 +128,6 @@ https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scroll
 | `HeatMapGenerator` | Накопление точек и генерация цветовой тепловой карты |
 | `VideoProcessor` | Оркестратор: чтение видео, запуск детекции, сохранение результата |
 
----
-
 ## Технологии
 
 - **Python**
@@ -145,14 +137,10 @@ https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scroll
 - **NumPy**
 - **Matplotlib**
 
----
-
 ## Результаты работы
 
 - `oop_output.mp4` — обработанное видео с bounding box, траекториями, счётчиком и цветовой индикацией
 - `heatmap_overlay.jpg` — тепловая карта, наложенная на последний кадр
-
----
 
 ## Запуск
 
@@ -165,14 +153,13 @@ https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D#scroll
 pip install ultralytics opencv-python
 ```
 
----
-
 ## Что демонстрирует проект
 
 - Практические навыки детекции объектов и мультиобъектного трекинга
 - Построение полного пайплайна видеоаналитики
 - Проектирование чистой и расширяемой ООП-архитектуры систем компьютерного зрения
 - Работу с реальными данными городских камер наблюдения
+
 
 
 ## Контакты
