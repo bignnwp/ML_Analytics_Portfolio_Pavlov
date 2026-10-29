@@ -83,6 +83,8 @@ Random Forest показал высокий Recall, что позволяет э
 
 **Код:** [Google Colab](https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D)
 
+**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/heart.csv)
+
 ---
 
 ### 4. Анализ продаж супермаркета + проверка гипотез
