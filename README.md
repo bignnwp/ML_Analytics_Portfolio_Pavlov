@@ -38,7 +38,8 @@
 
 **Код:** [Google Colab](https://colab.research.google.com/drive/1p40UtKlxW2FZkX7xY11Acabu92LQJ6VH)
 
-**Датасет**: [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/train.csv)
+**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/train.csv)
+
 ---
 
 ### 2. Анализ цен на квартиры в Москве
