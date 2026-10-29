@@ -160,7 +160,7 @@ pip install ultralytics opencv-python
 - Проектирование чистой и расширяемой ООП-архитектуры систем компьютерного зрения
 - Работу с реальными данными городских камер наблюдения
 
-
+**Ссылка на код**: https://colab.research.google.com/drive/1RSpXRFbK59RMsZOWblsOnoqfbBILgCQP
 
 ## Контакты
 Готов к обсуждению вакансий и интересных задач!
