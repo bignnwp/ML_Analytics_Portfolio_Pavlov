@@ -60,7 +60,7 @@
 
 **Код:** [Google Colab](https://colab.research.google.com/drive/1XDvNfTG9iemcfQMTIgv5-kosJW-uY8n_?usp=sharing)
 
-**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/flats_moscow.csv(
+**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/flats_moscow.csv)
 
 ---
 
