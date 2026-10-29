@@ -98,6 +98,7 @@ Random Forest показал высокий Recall, что позволяет э
 **Стек:** Python, Pandas, SciPy, Power BI
 
 **Материалы:**
+- [Дашборд Power BI](./Дашборд_продажи_супермаркет.pbix)
 - [Ноутбук проверки гипотез](./notebooks/supermarket_hypothesis_testing.ipynb)
 - [Исходные данные](./data/supermarket_sales.csv)
 
