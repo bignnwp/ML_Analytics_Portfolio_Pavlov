@@ -78,21 +78,14 @@
 
 ---
 
-## Ноутбук
+## Код
 
 **Colab:** https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO
 
-## Как запустить
-
-1. Открыть [ноутбук в Google Colab](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) (или Jupyter)  
-2. Загрузить `test_ds_1.xlsx` в рабочую директорию, если файл не подключён  
-3. **Runtime → Run all**
-
 ---
 
-## Файлы
+## Датасет
 
 | Файл | Описание |
 |------|----------|
-| [`price_direction_ml_Pavlov.ipynb`](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) | Основной ноутбук |
-| `test_ds_1.xlsx` | Датасет (OHLCV + target) |
+| `test_ds_1.xlsx` | OHLCV + target |
