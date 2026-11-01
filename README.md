@@ -36,6 +36,7 @@
 | 5 | [Production-ready система прогнозирования оттока](projects/05_churn_production/) | MLOps | FastAPI + Docker + Pytest | [Репозиторий](https://github.com/bignnwp/churn_ml_production) |
 | 6 | [Real-Time Vehicle Tracking (YOLOv8)](projects/06_vehicle_tracking/) | Computer Vision | Трекинг + счётчик + тепловая карта | [Colab](https://colab.research.google.com/drive/1RSpXRFbK59RMsZOWblsOnoqfbBILgCQP) |
 | 7 | [Authorship Attribution (NLP)](projects/07_authorship_attribution/) | NLP | LinearSVC: Accuracy 94.91%, Macro F1 94.60% | [Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1) |
+| 8 | [Прогнозирование направления цены (OHLCV)](projects/08_price_direction/) | Time Series ML | Test AUC 0.515 · baselines + time-series CV | [Colab](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) |
 
 ---
 
@@ -49,7 +50,8 @@ projects/
 ├── 04_supermarket_analysis/     # Power BI + статистика гипотез
 ├── 05_churn_production/         # MLOps (ссылка на отдельный репо)
 ├── 06_vehicle_tracking/         # Computer Vision (YOLOv8 + ByteTrack)
-└── 07_authorship_attribution/   # NLP (определение авторства)
+├── 07_authorship_attribution/   # NLP (определение авторства)
+└── 08_price_direction/          # Time Series: направление цены (OHLCV)
 ```
 
 Каждый проект содержит собственный `README.md` с описанием задачи, подхода, результатов и инструкциями.
