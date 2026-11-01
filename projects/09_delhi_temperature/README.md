@@ -6,6 +6,8 @@
 
 Целевая переменная: `meantemp`. Горизонт прогноза: **30 дней**.
 
+**Colab:** https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO
+
 ---
 
 ## Метрики и выводы
@@ -65,12 +67,14 @@ Naive · SeasonalNaive · AutoARIMA · AutoETS · AutoTheta
 
 ## Данные
 
+Файлы лежат в папке `data/`:
+
 | Файл | Описание |
 |------|----------|
-| `DailyDelhiClimateTrain.csv` | Обучающая выборка (ежедневно) |
-| `DailyDelhiClimateTest.csv`  | Тестовая выборка |
+| [`data/DailyDelhiClimateTrain.csv`](data/DailyDelhiClimateTrain.csv) | Обучающая выборка (ежедневно, 2013–2016) |
+| [`data/DailyDelhiClimateTest.csv`](data/DailyDelhiClimateTest.csv) | Тестовая выборка (2017) |
 
-Источник: [Daily Climate Time Series Data](https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data) (Delhi).
+Источник: [Daily Climate Time Series Data (Kaggle)](https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data).
 
 ---
 
@@ -88,9 +92,9 @@ Naive · SeasonalNaive · AutoARIMA · AutoETS · AutoTheta
 
 ## Как запустить
 
-1. Открыть `Notebook.ipynb` в Jupyter / Colab  
-2. Убедиться, что CSV лежат рядом с ноутбуком  
-3. Run All  
+1. Открыть [ноутбук в Google Colab](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO) или `Notebook.ipynb` локально  
+2. Убедиться, что CSV доступны из `data/` (в Colab — загрузить в runtime или примонтировать)  
+3. **Runtime → Run all**
 
 ```bash
 pip install pandas numpy matplotlib seaborn statsmodels statsforecast scikit-learn xgboost lightgbm
@@ -103,6 +107,6 @@ pip install pandas numpy matplotlib seaborn statsmodels statsforecast scikit-lea
 | Файл | Описание |
 |------|----------|
 | `Notebook.ipynb` | Основной ноутбук |
-| `DailyDelhiClimateTrain.csv` | Train |
-| `DailyDelhiClimateTest.csv` | Test |
+| `data/DailyDelhiClimateTrain.csv` | Train |
+| `data/DailyDelhiClimateTest.csv` | Test |
 | `README.md` | Описание проекта |
