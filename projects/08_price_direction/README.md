@@ -94,5 +94,5 @@
 
 | Файл | Описание |
 |------|----------|
-| `price_direction_ml_improved.ipynb` | Основной ноутбук |
+| [`price_direction_ml_Pavlov.ipynb`](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) | Основной ноутбук |
 | `test_ds_1.xlsx` | Датасет (OHLCV + target) |
