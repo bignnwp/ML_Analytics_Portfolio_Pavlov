@@ -78,5 +78,5 @@ pip install -r requirements.txt
 Готов к обсуждению вакансий и интересных задач.
 
 - **Email:** spavlov117@gmail.com
-- **Резюме:** [Яндекс.Диск](https://disk.yandex.ru/d/Ewk8q2Xq53od7g)
+- **Резюме:** [Яндекс.Диск](https://disk.yandex.ru/i/qeSncQ0nCpalLA)
 - **GitHub:** [bignnwp](https://github.com/bignnwp)
