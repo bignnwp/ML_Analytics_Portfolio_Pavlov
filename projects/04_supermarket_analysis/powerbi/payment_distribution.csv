@@ -1,0 +1,7 @@
+Customer type,Payment,Transactions,Share within customer type (%),Customer type total
+Member,Cash,168,33.5329,501
+Member,Credit card,172,34.3313,501
+Member,Ewallet,161,32.1357,501
+Normal,Cash,176,35.2705,499
+Normal,Credit card,139,27.8557,499
+Normal,Ewallet,184,36.8737,499
