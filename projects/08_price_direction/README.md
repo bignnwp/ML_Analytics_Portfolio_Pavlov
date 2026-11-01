@@ -86,6 +86,4 @@
 
 ## Датасет
 
-| Файл | Описание |
-|------|----------|
-| `test_ds_1.xlsx` | OHLCV + target |
+Excel-файл `test_ds_1.xlsx` (OHLCV + target)
