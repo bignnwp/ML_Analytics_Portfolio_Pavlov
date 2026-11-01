@@ -3,6 +3,12 @@
 Начинающий Data Scientist, изучающий прикладной искусственный интеллект в магистратуре.  
 Интересы: машинное обучение, компьютерное зрение, анализ данных и практическое внедрение ML-решений.
 
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.x-orange?logo=scikit-learn)](https://scikit-learn.org/)
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-00FFFF?logo=yolo)](https://github.com/ultralytics/ultralytics)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi)](https://powerbi.microsoft.com/)
+
 ---
 
 ## Технологический стек
@@ -14,189 +20,58 @@
 | **Computer Vision** | YOLOv8 (Ultralytics), OpenCV, ByteTrack |
 | **Анализ данных** | Pandas, NumPy, SciPy |
 | **Визуализация** | Matplotlib, Seaborn, Plotly, Power BI |
-| **Инструменты** | Git, Docker, Streamlit, FastAPI |
+| **MLOps / Production** | FastAPI, Docker, Pytest, Streamlit |
+| **Инструменты** | Git, Jupyter, Google Colab |
 
 ---
 
-## Проекты
+## Ключевые проекты
 
-### 1. Прогнозирование оттока клиентов банка
-
-**Задача:**  
-Спрогнозировать вероятность ухода клиента в ближайший месяц, чтобы отдел удержания мог заранее предложить персональные условия.
-
-**Что сделано:**
-- Разведочный анализ данных (EDA)
-- Feature Engineering и обработка категориальных признаков
-- Сравнение моделей: Logistic Regression, Random Forest, XGBoost
-- Интерпретация результатов с помощью SHAP
-
-**Результат:**  
-Лучшая модель — Decision Tree + SMOTE с **Recall = 0.85**. Приоритет отдан метрике Recall, так как важно минимизировать пропуск клиентов, склонных к оттоку.
-
-**Стек:** Python, Pandas, Scikit-learn, XGBoost, SHAP, Matplotlib, Seaborn
-
-**Код:** [Google Colab](https://colab.research.google.com/drive/1p40UtKlxW2FZkX7xY11Acabu92LQJ6VH)
-
-**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/train.csv)
+| # | Проект | Тип | Ключевой результат | Ссылка |
+|---|--------|-----|--------------------|--------|
+| 1 | [Прогнозирование оттока клиентов банка](projects/01_bank_churn/) | Tabular ML | Recall = 0.85 (Decision Tree + SMOTE) | [Colab](https://colab.research.google.com/drive/1p40UtKlxW2FZkX7xY11Acabu92LQJ6VH) |
+| 2 | [Анализ цен на квартиры в Москве](projects/02_moscow_flats/) | EDA | Чистый датасет + ключевые факторы цены | [Colab](https://colab.research.google.com/drive/1XDvNfTG9iemcfQMTIgv5-kosJW-uY8n_?usp=sharing) |
+| 3 | [Прогнозирование сердечно-сосудистых заболеваний](projects/03_heart_disease/) | Tabular ML | Высокий Recall + SHAP-интерпретация | [Colab](https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D) |
+| 4 | [Анализ продаж супермаркета + проверка гипотез](projects/04_supermarket_analysis/) | BI + Stats | Power BI дашборд + статистические тесты | Локально |
+| 5 | [Production-ready система прогнозирования оттока](projects/05_churn_production/) | MLOps | FastAPI + Docker + Pytest | [Репозиторий](https://github.com/bignnwp/churn_ml_production) |
+| 6 | [Real-Time Vehicle Tracking (YOLOv8)](projects/06_vehicle_tracking/) | Computer Vision | Трекинг + счётчик + тепловая карта | [Colab](https://colab.research.google.com/drive/1RSpXRFbK59RMsZOWblsOnoqfbBILgCQP) |
+| 7 | [Authorship Attribution (NLP)](projects/07_authorship_attribution/) | NLP | LinearSVC: Accuracy 94.91%, Macro F1 94.60% | [Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1) |
 
 ---
 
-### 2. Анализ цен на квартиры в Москве
+## Структура репозитория
 
-**Задача:**  
-Провести разведочный анализ данных и выявить факторы, влияющие на стоимость недвижимости в Москве.
+```text
+projects/
+├── 01_bank_churn/               # Классический ML + SHAP
+├── 02_moscow_flats/             # EDA недвижимости
+├── 03_heart_disease/            # Медицинский ML
+├── 04_supermarket_analysis/     # Power BI + статистика гипотез
+├── 05_churn_production/         # MLOps (ссылка на отдельный репо)
+├── 06_vehicle_tracking/         # Computer Vision (YOLOv8 + ByteTrack)
+└── 07_authorship_attribution/   # NLP (определение авторства)
+```
 
-**Что сделано:**
-- Очистка данных, удаление дубликатов и технических столбцов
-- Преобразование категориальных признаков
-- Создание признака «цена за м²»
-- Статистический анализ и визуализация ключевых распределений
-
-**Результат:**  
-Подготовлен чистый датасет и выявлены основные закономерности рынка недвижимости.
-
-**Стек:** Python, Pandas, NumPy, Matplotlib, Seaborn
-
-**Код:** [Google Colab](https://colab.research.google.com/drive/1XDvNfTG9iemcfQMTIgv5-kosJW-uY8n_?usp=sharing)
-
-**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/flats_moscow.csv)
+Каждый проект содержит собственный `README.md` с описанием задачи, подхода, результатов и инструкциями.
 
 ---
 
-### 3. Прогнозирование сердечно-сосудистых заболеваний
+## Как запустить
 
-**Задача:**  
-Построить модель для оценки риска сердечно-сосудистого заболевания на основе медицинских показателей пациента.
+Большинство экспериментов выполнены в Google Colab (ссылки указаны в таблице и в README проектов).  
+Локальные артефакты (данные, ноутбуки, Power BI) находятся в соответствующих папках.
 
-**Что сделано:**
-- EDA и проверка качества данных
-- Feature Engineering и масштабирование признаков
-- Сравнение моделей: Logistic Regression, Random Forest, Gradient Boosting
-- Оценка по Accuracy, Precision, Recall, F1-score, ROC-AUC
-- Интерпретация с помощью SHAP
-
-**Результат:**  
-Random Forest показал высокий Recall, что позволяет эффективно выявлять пациентов из группы риска.
-
-**Стек:** Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, SHAP
-
-**Код:** [Google Colab](https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D)
-
-**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/heart.csv)
+```bash
+# Пример установки зависимостей (общий стек)
+pip install -r requirements.txt
+```
 
 ---
-
-### 4. Анализ продаж супермаркета + проверка гипотез
-
-**Задача:**  
-Провести бизнес-анализ продаж супермаркета и статистически проверить гипотезы о влиянии программы лояльности.
-
-**Что сделано:**
-- Интерактивный дашборд в Power BI (продажи, филиалы, клиентские сегменты, способы оплаты)
-- Статистический анализ в Python:
-  - t-тест Уэлча + Cohen's d
-  - χ²-тест + V Крамера
-  - Поправка Holm на множественные сравнения
-
-**Результат:**  
-После поправки на множественные сравнения ни одна гипотеза не достигла статистической значимости (α = 0.05). Разница среднего чека Member vs Normal составила ≈ +3%, но доверительный интервал включает ноль.
-
-**Стек:** Python, Pandas, SciPy, Power BI
-
-**Материалы:**
-- [Дашборд Power BI](./Дашборд_продажи_супермаркет.pbix)
-- [Ноутбук проверки гипотез](./notebooks/supermarket_hypothesis_testing.ipynb)
-- [Исходные данные](./data/supermarket_sales.csv)
-
----
-
-### 5. Production-ready система прогнозирования оттока
-
-**Задача:**  
-Перевести модель прогнозирования оттока в production-формат с API, тестированием и контейнеризацией.
-
-**Что сделано:**
-- Обучение и сериализация модели
-- REST API на FastAPI
-- Написание тестов
-- Контейнеризация с Docker
-- Документация
-
-**Стек:** Python, Scikit-learn / XGBoost, FastAPI, Docker, Pytest
-
-**Репозиторий:** [churn_ml_production](https://github.com/bignnwp/churn_ml_production)
-
----
-
-### 6. Real-Time Vehicle Tracking & Traffic Flow Analysis with YOLOv8
-
-Комплексная система компьютерного зрения для интеллектуального мониторинга транспортного потока.
-
-**Входные данные:**  
-Запись с городской камеры наблюдения — [Камера_Иркутск.mp4](https://disk.yandex.ru/i/hjHdsy6pXZMcYA)
-
-**Ключевые возможности:**
-- Мультиобъектный трекинг с сохранением ID (ByteTrack)
-- Подсчёт транспортных средств при пересечении линии
-- Динамическая визуализация траекторий
-- Генерация тепловой карты плотности движения
-- Изменение цвета объектов после пересечения линии
-- Чистая объектно-ориентированная архитектура
-
-**Архитектура:**
-
-| Класс | Назначение |
-|-------|------------|
-| `DetectedObject` | Инкапсуляция объекта (бокс, центр, цвет, траектория, отрисовка) |
-| `TrafficAnalytics` | Логика подсчёта и отслеживания пересечений линии |
-| `HeatMapGenerator` | Накопление точек и генерация цветовой тепловой карты |
-| `VideoProcessor` | Оркестратор: чтение видео, детекция, сохранение результата |
-
-**Технологии:** Python · YOLOv8 · ByteTrack · OpenCV · NumPy · Matplotlib
-
-**Результаты:**
-- `oop_output.mp4` — видео с bounding box, траекториями и счётчиком
-- `heatmap_overlay.jpg` — тепловая карта, наложенная на последний кадр
-
-**Что демонстрирует проект:**
-- Детекция объектов и мультиобъектный трекинг
-- Полный пайплайн видеоаналитики
-- Проектирование расширяемой ООП-архитектуры
-- Работа с реальными данными городских камер
-
-**Код:** [Google Colab](https://colab.research.google.com/drive/1RSpXRFbK59RMsZOWblsOnoqfbBILgCQP)
-
----
-
-### 7. Authorship Attribution — определение авторства текстов (NLP)
-
-**Цель проекта:** разработать модель машинного обучения, определяющую автора текстового фрагмента среди шести известных писателей по стилистическим особенностям текста.
-
-**Что реализовано:**
-- Подготовка текстового корпуса шести авторов и разбиение произведений на непересекающиеся фрагменты по 1 000 символов.
-- Извлечение признаков с помощью TF-IDF и символьных n-грамм длиной 3–5 символов.
-- Сравнение LinearSVC, Logistic Regression и Random Forest на едином train/test-разбиении.
-- Оценка качества с помощью Accuracy, Macro F1, classification report и матрицы ошибок.
-- Анализ различий в качестве моделей и ограничений экспериментальной оценки.
-
-**Результаты эксперимента:**
-
-- LinearSVC: Accuracy — 94,91%, Macro F1 — 94,60%.
-- Logistic Regression: Accuracy — 94,22%, Macro F1 — 93,95%.
-- Random Forest: Accuracy — 77,18%, Macro F1 — 74,44%.
-
-В рамках проведённого эксперимента LinearSVC показал наилучшее качество классификации.
-
-**Технологии:** Python, Pandas, NumPy, Scikit-learn, TF-IDF, Matplotlib, Seaborn.
-
-**Код:** [Google Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1)
-
-**Датасет:** [скачать](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/writerextnd.zip)
 
 ## Контакты
 
 Готов к обсуждению вакансий и интересных задач.
 
 - **Email:** spavlov117@gmail.com
-- **Резюме:** [ссылка](https://disk.yandex.ru/d/Ewk8q2Xq53od7g)
+- **Резюме:** [Яндекс.Диск](https://disk.yandex.ru/d/Ewk8q2Xq53od7g)
+- **GitHub:** [bignnwp](https://github.com/bignnwp)
