@@ -102,11 +102,6 @@ pip install pandas numpy matplotlib seaborn statsmodels statsforecast scikit-lea
 
 ---
 
-## Файлы
+## Код
 
-| Файл | Описание |
-|------|----------|
-| [`Notebook.ipynb`](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO) | Основной ноутбук |
-| `data/DailyDelhiClimateTrain.csv` | Train |
-| `data/DailyDelhiClimateTest.csv` | Test |
-| `README.md` | Описание проекта |
+[`Notebook.ipynb`](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO)
