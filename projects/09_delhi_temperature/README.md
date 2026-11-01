@@ -92,7 +92,7 @@ Naive · SeasonalNaive · AutoARIMA · AutoETS · AutoTheta
 
 ## Как запустить
 
-1. Открыть [ноутбук в Google Colab](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO) или `Notebook.ipynb` локально  
+1. Открыть [ноутбук](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO)  
 2. Убедиться, что CSV доступны из `data/` (в Colab — загрузить в runtime или примонтировать)  
 3. **Runtime → Run all**
 
@@ -106,7 +106,7 @@ pip install pandas numpy matplotlib seaborn statsmodels statsforecast scikit-lea
 
 | Файл | Описание |
 |------|----------|
-| `Notebook.ipynb` | Основной ноутбук |
+| [`Notebook.ipynb`](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO) | Основной ноутбук |
 | `data/DailyDelhiClimateTrain.csv` | Train |
 | `data/DailyDelhiClimateTest.csv` | Test |
 | `README.md` | Описание проекта |
