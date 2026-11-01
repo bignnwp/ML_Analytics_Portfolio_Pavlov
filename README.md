@@ -54,7 +54,7 @@ projects/
 ├── 06_vehicle_tracking/         # Computer Vision (YOLOv8 + ByteTrack)
 ├── 07_authorship_attribution/   # NLP (определение авторства)
 ├── 08_price_direction/          # Time Series classification (OHLCV)
-└── 09_delhi_temperature/       # Time Series forecasting (Delhi Climate)
+└── 09_delhi_temperature/        # Time Series forecasting (Delhi Climate)
 ```
 
 Каждый проект содержит собственный `README.md` с описанием задачи, подхода, результатов и инструкциями.
