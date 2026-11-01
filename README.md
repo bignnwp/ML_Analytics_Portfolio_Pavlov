@@ -17,6 +17,7 @@
 |-------------|-------------|
 | **Языки** | Python, SQL |
 | **Machine Learning** | Scikit-learn, XGBoost, LightGBM, CatBoost |
+| **Time Series** | statsmodels, StatsForecast, lag/rolling features |
 | **Computer Vision** | YOLOv8 (Ultralytics), OpenCV, ByteTrack |
 | **Анализ данных** | Pandas, NumPy, SciPy |
 | **Визуализация** | Matplotlib, Seaborn, Plotly, Power BI |
@@ -36,7 +37,8 @@
 | 5 | [Production-ready система прогнозирования оттока](projects/05_churn_production/) | MLOps | FastAPI + Docker + Pytest | [Репозиторий](https://github.com/bignnwp/churn_ml_production) |
 | 6 | [Real-Time Vehicle Tracking (YOLOv8)](projects/06_vehicle_tracking/) | Computer Vision | Трекинг + счётчик + тепловая карта | [Colab](https://colab.research.google.com/drive/1RSpXRFbK59RMsZOWblsOnoqfbBILgCQP) |
 | 7 | [Authorship Attribution (NLP)](projects/07_authorship_attribution/) | NLP | LinearSVC: Accuracy 94.91%, Macro F1 94.60% | [Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1) |
-| 8 | [Прогнозирование направления цены (OHLCV)](projects/08_price_direction/) | Time Series ML | Test AUC 0.515 · baselines + time-series CV | [Colab](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) |
+| 8 | [Прогнозирование направления цены (OHLCV)](projects/08_price_direction/) | Time Series Classification | Test AUC 0.515 · baselines + time-series CV | [Colab](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) |
+| 9 | [Прогноз температуры (Delhi Climate)](projects/09_delhi_temperature/) | Time Series Forecasting | RF: MAE 1.24, RMSE 1.64 · ADF + StatsForecast | [Colab](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO) |
 
 ---
 
@@ -51,7 +53,8 @@ projects/
 ├── 05_churn_production/         # MLOps (ссылка на отдельный репо)
 ├── 06_vehicle_tracking/         # Computer Vision (YOLOv8 + ByteTrack)
 ├── 07_authorship_attribution/   # NLP (определение авторства)
-└── 08_price_direction/          # Time Series: направление цены (OHLCV)
+├── 08_price_direction/          # Time Series classification (OHLCV)
+└── 09_delhi_temperature/       # Time Series forecasting (Delhi Climate)
 ```
 
 Каждый проект содержит собственный `README.md` с описанием задачи, подхода, результатов и инструкциями.
