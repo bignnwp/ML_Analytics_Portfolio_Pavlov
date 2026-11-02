@@ -1,46 +1,57 @@
-# 07. Authorship Attribution — определение авторства текстов
+# Authorship Attribution with Character N-grams
 
-**Тип:** Natural Language Processing (NLP)  
-**Стек:** Python, Pandas, NumPy, Scikit-learn, TF-IDF, Matplotlib, Seaborn
+[English](README.md) | [Русский](README.ru.md)
 
----
+**Project type:** Natural Language Processing / Text Classification  
+**Technologies:** Python, Pandas, NumPy, scikit-learn, TF-IDF, Matplotlib, Seaborn
 
-## Задача
+## Overview
 
-Разработать модель машинного обучения, определяющую автора текстового фрагмента среди шести известных писателей по стилистическим особенностям текста.
+A text-classification experiment that predicts which of six known writers authored a text fragment, using stylistic patterns captured by character-level TF-IDF features.
 
-## Что реализовано
+## Problem
 
-- Подготовка текстового корпуса шести авторов
-- Разбиение произведений на непересекающиеся фрагменты по 1 000 символов
-- Извлечение признаков с помощью TF-IDF и символьных n-грамм (3–5)
-- Сравнение моделей: LinearSVC, Logistic Regression, Random Forest
-- Оценка качества: Accuracy, Macro F1, classification report, матрица ошибок
-- Анализ ограничений экспериментальной оценки
+Given a short text fragment, classify it into one of six author classes. The experiment focuses on stylometric signals such as character sequences rather than semantic understanding of the text.
 
-## Результаты эксперимента
+## Workflow
 
-| Модель               | Accuracy | Macro F1 |
-|----------------------|----------|----------|
-| **LinearSVC**        | **94.91%** | **94.60%** |
-| Logistic Regression  | 94.22%   | 93.95%   |
-| Random Forest        | 77.18%   | 74.44%   |
+- Prepare a text corpus for six authors.
+- Split source texts into fragments of 1,000 characters.
+- Extract character n-gram features with TF-IDF (n-gram range 3–5).
+- Compare LinearSVC, Logistic Regression and Random Forest.
+- Evaluate Accuracy, Macro F1, classification report and confusion matrix.
+- Discuss the limitations of the experimental evaluation.
 
-В рамках проведённого эксперимента LinearSVC показал наилучшее качество классификации.
+## Reported results
 
-## Структура папки
+| Model | Accuracy | Macro F1 |
+|---|---:|---:|
+| **LinearSVC** | **94.91%** | **94.60%** |
+| Logistic Regression | 94.22% | 93.95% |
+| Random Forest | 77.18% | 74.44% |
+
+LinearSVC achieved the best reported result in this experiment.
+
+## Data
+
+The portfolio includes the compressed corpus at [`data/writerextnd.zip`](data/writerextnd.zip). The archive contains the text data used in the experiment. Check the dataset's original source and usage terms before redistributing it.
+
+## Code and notebook
+
+[Open Authorship Attribution notebook in Google Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1)
+
+The notebook is hosted externally in Colab; it is not included in the current repository snapshot.
+
+## Repository structure
 
 ```text
 07_authorship_attribution/
 ├── README.md
+├── README.ru.md
 └── data/
-    └── writerextnd.zip     # Корпус текстов
+    └── writerextnd.zip
 ```
 
-## Код
+## Important validation note
 
-Полный ноутбук: [Google Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1)
-
-## Датасет
-
-Архив `data/writerextnd.zip`
+A high text-classification score can be misleading if fragments from the same original work appear in both the training and test sets. For a stronger evaluation, split by source work (grouped split) before creating or assigning fragments, and report the split strategy explicitly.
