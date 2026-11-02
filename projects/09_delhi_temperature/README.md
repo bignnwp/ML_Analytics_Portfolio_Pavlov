@@ -1,107 +1,78 @@
-# Прогнозирование температуры воздуха (Daily Delhi Climate)
+# Delhi Daily Temperature Forecasting
 
-**Time Series Forecasting · Regression**
+[English](README.md) | [Русский](README.ru.md)
 
-Прогноз среднесуточной температуры в Дели по ежедневным климатическим наблюдениям (2013–2017).
+**Project type:** Time Series Forecasting / Regression  
+**Technologies:** Python, Pandas, NumPy, statsmodels, StatsForecast, scikit-learn, XGBoost, LightGBM, Matplotlib, Seaborn
 
-Целевая переменная: `meantemp`. Горизонт прогноза: **30 дней**.
+## Overview
 
-**Colab:** https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO
+A time-series forecasting project using daily climate observations from Delhi (2013–2017). The target variable is `meantemp`, and the reported forecast horizon is **30 days**.
 
----
+The repository contains 1,462 training rows and 114 test rows across five columns: date, mean temperature, humidity, wind speed and mean pressure.
 
-## Метрики и выводы
+## Objective
 
-### Результаты на TEST (горизонт 30 дней)
+Explore the structure of the temperature series and compare statistical forecasting methods with machine-learning models built from lagged, rolling and calendar features.
 
-| Модель              | Тип        | MAE   | RMSE  |
-|---------------------|------------|------:|------:|
-| **Random Forest**   | ML         | **1.241** | **1.636** |
-| XGBoost             | ML         | 1.336 | 1.687 |
-| LightGBM            | ML         | 1.316 | 1.687 |
-| AutoTheta           | Statistical| —     | 3.963 |
-| AutoARIMA / AutoETS / SeasonalNaive / Naive | Statistical | — | см. ноутбук |
+## Workflow
 
-### Выводы
+### Exploratory analysis and time-series diagnostics
 
-1. Ряд температуры имеет **выраженную сезонность** и признаки нестационарности (подтверждено декомпозицией и **ADF-тестом**).
-2. ACF/PACF показывают значимую автокорреляцию и сезонную структуру — обоснованы лаги 1 / 7 / 30 и rolling-признаки.
-3. Среди статистических моделей **StatsForecast** лучший результат у **AutoTheta** (RMSE ≈ 3.96).
-4. ML-модели с лагами, rolling и календарными признаками существенно точнее: **Random Forest** — MAE 1.24, RMSE 1.64.
-5. Итоговый пайплайн: загрузка → очистка → EDA → feature engineering → time-based split → обучение → выбор модели → прогноз.
+- Check missing values and duplicates.
+- Visualize temperature and other climate variables.
+- Review outliers and correlations.
+- Perform seasonal decomposition.
+- Apply the Augmented Dickey–Fuller (ADF) test.
+- Inspect ACF/PACF and temperature anomalies.
 
-> Сравнение stats vs ML приведено для одного и того же горизонта (30 дней) и хронологического hold-out.
+### Statistical forecasting
 
----
+Compare Naive, SeasonalNaive, AutoARIMA, AutoETS and AutoTheta using StatsForecast.
 
-## Что сделано
+### Machine learning
 
-### EDA и свойства ряда
-- проверка пропусков и дубликатов;
-- визуализация `meantemp`, humidity, wind_speed, meanpressure;
-- boxplot / выбросы (в т.ч. аномалии pressure и wind_speed);
-- корреляции признаков;
-- **сезонная декомпозиция**;
-- **ADF-тест** стационарности;
-- **ACF и PACF**;
-- поиск аномалий температуры (Z-score).
+- Build lag features (`lag_1`, `lag_7`, `lag_30`).
+- Add rolling statistics and calendar features.
+- Compare Random Forest, XGBoost and LightGBM.
+- Use a chronological hold-out evaluation for a 30-day horizon.
 
-### Статистическое прогнозирование (StatsForecast)
-Naive · SeasonalNaive · AutoARIMA · AutoETS · AutoTheta
+## Reported test results
 
-### Machine Learning
-- признаки: `lag_1`, `lag_7`, `lag_30`, rolling mean, month / dayofweek / dayofyear;
-- модели: Random Forest, XGBoost, LightGBM;
-- хронологический train/test split.
+| Model | Family | MAE | RMSE |
+|---|---|---:|---:|
+| **Random Forest** | ML | **1.241** | **1.636** |
+| XGBoost | ML | 1.336 | 1.687 |
+| LightGBM | ML | 1.316 | 1.687 |
+| AutoTheta | Statistical | — | 3.963 |
 
-### Пайплайн
-Единый цикл от предобработки до выбора лучшей модели и оценки производительности (время обучения).
+Other statistical model results are available in the notebook. According to the project report, Random Forest achieved the lowest error among the listed models.
 
----
+## Data
 
-## Стек
+- [Training data](data/DailyDelhiClimateTrain.csv) — 1,462 daily records.
+- [Test data](data/DailyDelhiClimateTest.csv) — 114 daily records.
+- Original source: [Daily Climate Time Series Data on Kaggle](https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data).
 
-`Python` · `pandas` · `NumPy` · `statsmodels` · `statsforecast` · `scikit-learn` · `XGBoost` · `LightGBM` · `matplotlib` · `seaborn`
+## Code and notebook
 
----
+[Open the forecasting notebook in Google Colab](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO)
 
-## Данные
-
-Файлы лежат в папке `data/`:
-
-| Файл | Описание |
-|------|----------|
-| [`data/DailyDelhiClimateTrain.csv`](data/DailyDelhiClimateTrain.csv) | Обучающая выборка (ежедневно, 2013–2016) |
-| [`data/DailyDelhiClimateTest.csv`](data/DailyDelhiClimateTest.csv) | Тестовая выборка (2017) |
-
-Источник: [Daily Climate Time Series Data (Kaggle)](https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data).
-
----
-
-## Структура ноутбука
-
-1. Подготовка и первичный анализ  
-2. EDA (тренд, сезонность, выбросы, корреляции)  
-3. Декомпозиция, ADF, ACF/PACF, аномалии  
-4. StatsForecast — сравнение статистических моделей  
-5. ML-модели (лаги + rolling + календарь)  
-6. Пайплайн и замер производительности  
-7. Сравнение и выводы  
-
----
-
-## Как запустить
-
-1. Открыть [ноутбук](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO)  
-2. Убедиться, что CSV доступны из `data/` (в Colab — загрузить в runtime или примонтировать)  
-3. **Runtime → Run all**
+Install the main dependencies in a notebook environment:
 
 ```bash
 pip install pandas numpy matplotlib seaborn statsmodels statsforecast scikit-learn xgboost lightgbm
 ```
 
----
+The notebook is hosted externally in Colab and is not included in the current repository snapshot. Make sure the CSV files are available in the Colab runtime before running all cells.
 
-## Код
+## Repository structure
 
-[`Notebook.ipynb`](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO)
+```text
+09_delhi_temperature/
+├── README.md
+├── README.ru.md
+└── data/
+    ├── DailyDelhiClimateTrain.csv
+    └── DailyDelhiClimateTest.csv
+```
