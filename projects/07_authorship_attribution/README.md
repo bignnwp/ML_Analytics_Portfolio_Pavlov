@@ -51,7 +51,3 @@ The notebook is hosted externally in Colab; it is not included in the current re
 └── data/
     └── writerextnd.zip
 ```
-
-## Important validation note
-
-A high text-classification score can be misleading if fragments from the same original work appear in both the training and test sets. For a stronger evaluation, split by source work (grouped split) before creating or assigning fragments, and report the split strategy explicitly.

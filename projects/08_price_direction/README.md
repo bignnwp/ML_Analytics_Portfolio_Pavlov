@@ -58,5 +58,3 @@ The notebook is hosted externally in Colab and is not included in the current po
 └── data/
     └── test_ds_1.xlsx
 ```
-
-**Disclaimer:** this is an educational research experiment, not investment advice or a live trading system.
