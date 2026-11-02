@@ -1,89 +1,62 @@
-# Прогнозирование направления цены (дневные OHLCV)
+# Next-Day Price Direction Prediction
 
-**Time Series · Binary Classification**
+[English](README.md) | [Русский](README.ru.md)
 
-Предсказание направления цены на следующий торговый день по дневным OHLCV-данным (2014–2024, ~2500 наблюдений).
+**Project type:** Time Series / Binary Classification  
+**Technologies:** Python, Pandas, NumPy, scikit-learn, Matplotlib, Seaborn
 
-`target = 1` — рост, `target = 0` — падение / без роста.
+## Overview
 
----
+An experiment to predict whether the next trading day's price direction will be up or not, using daily OHLCV data. The dataset covers approximately 2014–2024 and contains **2,507 observations**.
 
-## Метрики и выводы
+Target definition:
 
-### Результаты на TEST
+- `target = 1` — price increase.
+- `target = 0` — price decrease or no increase.
 
-| Модель / правило           | Accuracy | Precision | Recall | F1    | ROC-AUC |
-|----------------------------|----------|-----------|--------|-------|---------|
-| **Random Forest** (лучшая) | **0.518**| 0.506     | 0.539  | **0.522** | **0.515** |
-| Logistic Regression        | 0.506    | —         | —      | 0.506 | 0.497   |
-| HistGradientBoosting       | 0.494    | —         | —      | 0.484 | 0.495   |
-| Majority class             | 0.488    | —         | —      | —     | —       |
-| Previous-day direction     | 0.474    | —         | —      | —     | —       |
+## Methodology
 
-### Train vs Test (лучшая модель — RF)
+- Create features using only information available up to the prediction point.
+- Engineer returns and lags, SMA ratios, RSI, MACD, Bollinger features, ATR, momentum, volume and cyclical calendar features.
+- Use chronological 80/20 train/test split.
+- Apply 5-fold `TimeSeriesSplit` for time-aware validation.
+- Compare Logistic Regression, Random Forest and HistGradientBoosting.
+- Compare against majority-class and previous-day-direction baselines.
+- Review train/test metrics, confusion matrices, feature importance and thresholds.
 
-| Metric    | Train  | Test   | Gap    |
-|-----------|--------|--------|--------|
-| Accuracy  | 0.688  | 0.518  | 0.170  |
-| F1        | 0.695  | 0.522  | 0.173  |
-| ROC-AUC   | 0.758  | 0.515  | 0.243  |
+## Test results
 
-### Выводы
+| Model / rule | Accuracy | Precision | Recall | F1 | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| **Random Forest** | **0.518** | 0.506 | 0.539 | **0.522** | **0.515** |
+| Logistic Regression | 0.506 | — | — | 0.506 | 0.497 |
+| HistGradientBoosting | 0.494 | — | — | 0.484 | 0.495 |
+| Majority class | 0.488 | — | — | — | — |
+| Previous-day direction | 0.474 | — | — | — | — |
 
-1. **Задача объективно сложная.** Направление дневной цены по одним только OHLCV близко к случайному процессу. Лучшая модель (Random Forest) на тесте: ROC-AUC **0.515**, Accuracy **0.518**, F1 **0.522** — слабый сигнал чуть выше 0.5.
+The Random Forest result is only slightly above chance. Its train/test ROC-AUC gap is substantial (0.758 vs 0.515), indicating overfitting.
 
-2. **Сравнение с baseline.** RF лучше majority class (0.488) и previous-day direction (0.474), но запас прочности минимальный.
+## Interpretation
 
-3. **Переобучение.**  
-   - RF: Train AUC 0.76 → Test 0.51 (gap 0.24) — умеренный overfitting при регуляризации  
-   - HGB: gap ≈ 0.48 — сильно запоминает train  
-   - LogReg: gap ≈ 0.09, но Test AUC ≈ 0.50 — сигнала почти нет  
+- The available OHLCV features provide only a weak predictive signal in this experiment.
+- Random Forest marginally outperformed the simple baselines, but the improvement is small.
+- The results are useful as an evaluation of modelling limits, not evidence of a profitable trading strategy.
 
-4. **Методология.** Признаки только из прошлого (без утечки), хронологический split + TimeSeriesSplit, явные baseline, ограничение сложности моделей.
+## Data and code
 
-5. **Практика.** Pipeline — корректная исследовательская база, а не торговая стратегия. Для реального применения нужны учёт комиссий, калибровка и внешние факторы.
+- Local data: [`data/test_ds_1.xlsx`](data/test_ds_1.xlsx) (2,507 rows; OHLCV fields and target).
+- [Open the notebook in Google Colab](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO)
 
----
+The notebook is hosted externally in Colab and is not included in the current portfolio snapshot.
 
-## Что сделано
+## Repository structure
 
-- **Feature engineering без утечки будущего** — доходности и лаги, SMA-ratios, RSI, MACD, Bollinger, ATR, momentum, volume, циклические календарные признаки (sin/cos)
-- **Хронологический split** 80/20 + **TimeSeriesSplit** (5 фолдов)
-- **Явные baseline** — majority class и направление предыдущего дня
-- **Регуляризация** — ограничение глубины, `min_samples_leaf`, L2, `class_weight`
-- Сравнение LogReg / RandomForest / HistGradientBoosting
-- Метрики и confusion matrix на train и test
-- Единый model dashboard (метрики, CM, ROC, сравнение моделей)
-- Threshold-анализ
+```text
+08_price_direction/
+├── README.md
+├── README.ru.md
+└── data/
+    └── test_ds_1.xlsx
+```
 
----
-
-## Структура ноутбука
-
-1. Загрузка и очистка данных  
-2. Feature engineering  
-3. Train/Test split + baselines  
-4. TimeSeriesSplit CV  
-5. Обучение моделей  
-6. Выбор лучшей модели + feature importance  
-7. Метрики, confusion matrix, единый дашборд  
-8. Threshold и предсказания на тесте  
-9. Выводы  
-
----
-
-## Стек
-
-`Python` · `pandas` · `NumPy` · `scikit-learn` · `matplotlib` · `seaborn`
-
----
-
-## Код
-
-**Colab:** https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO
-
----
-
-## Датасет
-
-Excel-файл `test_ds_1.xlsx` (OHLCV + target)
+**Disclaimer:** this is an educational research experiment, not investment advice or a live trading system.
