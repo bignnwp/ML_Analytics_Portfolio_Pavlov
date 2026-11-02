@@ -57,14 +57,3 @@ The current portfolio snapshot contains the dataset and this project README; the
 └── data/
     └── train.csv
 ```
-
-## Limitations and next steps
-
-- Add a complete comparison table with Precision, Recall, F1, ROC-AUC and PR-AUC for all models.
-- Include a confusion matrix and a threshold-selection discussion.
-- Validate that resampling is performed only on the training folds to avoid data leakage.
-- Translate model scores into an operational retention scenario, including the cost of false positives and false negatives.
-
-## Notes
-
-This is an educational portfolio project, not a deployed banking decision system. Predictions should not be used for real customer decisions without independent validation, governance and fairness checks.
