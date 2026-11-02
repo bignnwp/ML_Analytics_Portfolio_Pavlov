@@ -1,37 +1,50 @@
-# 05. Production-ready система прогнозирования оттока
+# Production-Oriented Customer Churn Prediction
 
-**Тип:** MLOps / Production ML  
-**Стек:** Python, Scikit-learn / XGBoost, FastAPI, Docker, Pytest
+[English](README.md) | [Русский](README.ru.md)
 
----
+**Project type:** MLOps / Production Machine Learning  
+**Technologies:** Python, scikit-learn / XGBoost, FastAPI, Docker, Pytest
 
-## Задача
+## Overview
 
-Перевести модель прогнозирования оттока клиентов в production-формат с API, тестированием и контейнеризацией.
+This project takes a customer-churn prediction model beyond an isolated notebook and packages it as a service-oriented application. The focus is on the engineering components needed to expose model predictions through an API and make the application easier to test and run.
 
-## Что сделано
+## Objective
 
-- Обучение и сериализация модели
-- REST API на FastAPI
-- Написание unit- и integration-тестов
-- Контейнеризация с Docker
-- Документация API
+Create a production-oriented structure around a churn model, including model training and serialization, a prediction API, automated tests and containerization.
 
-## Репозиторий
+## Main components
 
-Полный код вынесен в отдельный репозиторий (рекомендуемая практика для production-проектов):
+| Component | Purpose |
+|---|---|
+| Model training | Train and serialize the machine-learning model |
+| FastAPI | Expose predictions through a REST API |
+| Pytest | Run unit and integration tests |
+| Docker | Package the service in a container |
+| API documentation | Describe available endpoints and usage |
 
-**[github.com/bignnwp/churn_ml_production](https://github.com/bignnwp/churn_ml_production)**
+## Source code
 
-## Ключевые компоненты
+The implementation is maintained in a separate repository rather than duplicated in this portfolio folder:
 
-| Компонент     | Описание                          |
-|---------------|-----------------------------------|
-| FastAPI       | REST API для предсказаний         |
-| Docker        | Контейнеризация сервиса           |
-| Pytest        | Автоматизированное тестирование   |
-| Модель        | Сериализованная ML-модель         |
+**[Open churn_ml_production on GitHub](https://github.com/bignnwp/churn_ml_production)**
 
-## Как запустить
+Refer to that repository's README for the current architecture, exact setup instructions, available endpoints and supported deployment workflow.
 
-См. инструкции в репозитории проекта.
+## Portfolio repository structure
+
+```text
+05_churn_production/
+├── README.md
+└── README.ru.md
+```
+
+The portfolio folder is an entry point to the standalone implementation; the application source code is in the linked repository.
+
+## What this project demonstrates
+
+- Packaging a trained ML model as an application component.
+- Serving predictions through a REST API.
+- Separating application logic from model training.
+- Testing API and model-related behaviour.
+- Containerizing the service for a repeatable runtime environment.
