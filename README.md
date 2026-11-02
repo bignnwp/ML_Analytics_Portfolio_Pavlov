@@ -168,7 +168,3 @@ The root `requirements.txt` contains a shared set of Python dependencies for the
 - **Email:** [spavlov117@gmail.com](mailto:spavlov117@gmail.com)
 - **GitHub:** [bignnwp](https://github.com/bignnwp)
 - **Resume:** [View CV](https://disk.yandex.ru/i/qeSncQ0nCpalLA)
-
----
-
-*This portfolio is a collection of applied learning and engineering projects. Reported metrics are reproduced from the corresponding project documentation; please consult each project for its validation setup, assumptions, and limitations.*
