@@ -36,8 +36,7 @@ Recall выбран приоритетной метрикой, чтобы сни
 
 В репозитории находится `data/train.csv` (165 034 строки, 14 столбцов). Целевая переменная — `Exited`.
 
-- [Открыть локальный датасет](data/train.csv)
-- [Открыть датасет на GitHub](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/projects/01_bank_churn/data/train.csv)
+- [Открыть датасет](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/projects/01_bank_churn/data/train.csv)
 
 Перед распространением или повторным использованием датасета за пределами портфолио проверьте условия его лицензии.
 
