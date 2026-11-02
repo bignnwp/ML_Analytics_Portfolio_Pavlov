@@ -49,7 +49,3 @@ The notebook is hosted externally in Colab; it is not included in the current re
 └── data/
     └── heart.csv
 ```
-
-## Responsible-use note
-
-This is an educational machine-learning project. It must not be used to diagnose, screen or make treatment decisions for real people. Clinical use would require representative data, external validation, regulatory review and qualified medical oversight.
