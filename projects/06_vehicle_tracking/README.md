@@ -1,54 +1,61 @@
-# 06. Real-Time Vehicle Tracking & Traffic Flow Analysis
+# Vehicle Tracking & Traffic Flow Analysis
 
-**Тип:** Computer Vision  
-**Стек:** Python · YOLOv8 · ByteTrack · OpenCV · NumPy · Matplotlib
+[English](README.md) | [Русский](README.ru.md)
 
----
+**Project type:** Computer Vision / Video Analytics  
+**Technologies:** Python, YOLOv8, ByteTrack, OpenCV, NumPy, Matplotlib
 
-## Задача
+## Overview
 
-Комплексная система компьютерного зрения для интеллектуального мониторинга транспортного потока по записи с городской камеры наблюдения.
+A computer-vision pipeline for analysing traffic in recorded footage from a city surveillance camera. The system detects vehicles, tracks individual objects across frames and derives simple traffic-flow visualizations.
 
-**Входные данные:** [Камера_Иркутск.mp4](https://disk.yandex.ru/i/hjHdsy6pXZMcYA)
+**Input video:** [Camera footage from Irkutsk](https://disk.yandex.ru/i/hjHdsy6pXZMcYA)
 
-## Ключевые возможности
+## Capabilities
 
-- Мультиобъектный трекинг с сохранением ID (ByteTrack)
-- Подсчёт транспортных средств при пересечении линии
-- Динамическая визуализация траекторий
-- Генерация тепловой карты плотности движения
-- Изменение цвета объектов после пересечения линии
-- Чистая объектно-ориентированная архитектура
+- Multi-object tracking with persistent IDs using ByteTrack.
+- Counting vehicles when they cross a configured line.
+- Visualizing object trajectories.
+- Generating a traffic-density heatmap.
+- Changing the visual state/colour of tracked objects after line crossing.
+- Organizing processing logic into object-oriented components.
 
-## Архитектура
+## Architecture
 
-| Класс              | Назначение                                              |
-|--------------------|---------------------------------------------------------|
-| `DetectedObject`   | Инкапсуляция объекта (бокс, центр, цвет, траектория)    |
-| `TrafficAnalytics` | Логика подсчёта и отслеживания пересечений линии        |
-| `HeatMapGenerator` | Накопление точек и генерация цветовой тепловой карты    |
-| `VideoProcessor`   | Оркестратор: чтение видео, детекция, сохранение результата |
+| Component | Responsibility |
+|---|---|
+| `DetectedObject` | Stores an object's bounding box, centre, colour and trajectory |
+| `TrafficAnalytics` | Handles tracking-related analytics and line-crossing counts |
+| `HeatMapGenerator` | Accumulates object positions and creates a heatmap |
+| `VideoProcessor` | Coordinates video reading, detection and result generation |
 
-## Результаты
+## Expected outputs
 
-- `oop_output.mp4` — видео с bounding box, траекториями и счётчиком
-- `heatmap_overlay.jpg` — тепловая карта, наложенная на последний кадр
+The project description identifies the following generated artifacts:
 
-## Что демонстрирует проект
+- `oop_output.mp4` — processed video with bounding boxes, trajectories and a counter.
+- `heatmap_overlay.jpg` — traffic-density heatmap overlaid on a video frame.
 
-- Детекция объектов и мультиобъектный трекинг
-- Полный пайплайн видеоаналитики
-- Проектирование расширяемой ООП-архитектуры
-- Работа с реальными данными городских камер
+These output files are described by the project but are not included in the current portfolio archive.
 
-## Структура папки
+## Code and input
+
+- [Open the implementation in Google Colab](https://colab.research.google.com/drive/1RSpXRFbK59RMsZOWblsOnoqfbBILgCQP)
+- [Open the source video](https://disk.yandex.ru/i/hjHdsy6pXZMcYA)
+
+The current portfolio folder contains this project description; the notebook is hosted externally in Colab.
+
+## Repository structure
 
 ```text
 06_vehicle_tracking/
 ├── README.md
-└── assets/               # Скриншоты, heatmap, демо-гифки
+└── README.ru.md
 ```
 
-## Код
+## What this project demonstrates
 
-Полный ноутбук: [Google Colab](https://colab.research.google.com/drive/1RSpXRFbK59RMsZOWblsOnoqfbBILgCQP)
+- Object detection and multi-object tracking.
+- A video-processing workflow from input footage to analytics outputs.
+- Object-oriented separation of detection, tracking analytics and visualization.
+- Working with real-world video, where lighting, occlusion and camera perspective can affect detection quality.
