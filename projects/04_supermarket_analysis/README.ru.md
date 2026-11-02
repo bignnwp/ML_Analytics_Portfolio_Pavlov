@@ -55,31 +55,6 @@
     └── payment_distribution.csv
 ```
 
-## Как запустить
-
-### Статистический ноутбук
-
-Из папки проекта создай окружение, установи зависимости и запусти Jupyter:
-
-```bash
-python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-source .venv/bin/activate
-
-pip install pandas numpy scipy statsmodels matplotlib seaborn jupyter
-jupyter notebook notebooks/supermarket_hypothesis_testing.ipynb
-```
-
-Ноутбук использует локальный файл `data/supermarket_sales.csv` через относительный путь.
-
-### Дашборд Power BI
-
-Открой [`powerbi/supermarket_sales_dashboard.pbix`](powerbi/supermarket_sales_dashboard.pbix) в Power BI Desktop.
-
 ## Данные и результаты
 
 - [Датасет транзакций](data/supermarket_sales.csv)

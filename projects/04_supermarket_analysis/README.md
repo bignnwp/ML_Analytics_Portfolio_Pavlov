@@ -55,31 +55,6 @@ These are observational comparisons. `Member` and `Normal` are not randomly assi
     └── payment_distribution.csv
 ```
 
-## How to run
-
-### Statistical notebook
-
-From this project directory, install the dependencies and start Jupyter:
-
-```bash
-python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-source .venv/bin/activate
-
-pip install pandas numpy scipy statsmodels matplotlib seaborn jupyter
-jupyter notebook notebooks/supermarket_hypothesis_testing.ipynb
-```
-
-The notebook reads the local file from `data/supermarket_sales.csv` when run from its own `notebooks/` directory or through the supported relative path logic in the notebook.
-
-### Power BI dashboard
-
-Open [`powerbi/supermarket_sales_dashboard.pbix`](powerbi/supermarket_sales_dashboard.pbix) in Power BI Desktop.
-
 ## Data
 
 - [Transaction dataset](data/supermarket_sales.csv)
