@@ -1,39 +1,55 @@
-# 03. Прогнозирование сердечно-сосудистых заболеваний
+# Heart Disease Prediction
 
-**Тип:** Tabular Machine Learning (медицинские данные)  
-**Стек:** Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, SHAP
+[English](README.md) | [Русский](README.ru.md)
 
----
+**Project type:** Tabular Machine Learning / Medical Data Classification  
+**Technologies:** Python, Pandas, NumPy, scikit-learn, Matplotlib, Seaborn, SHAP
 
-## Задача
+## Overview
 
-Построить модель для оценки риска сердечно-сосудистого заболевания на основе медицинских показателей пациента.
+This project explores classification models that estimate whether a record belongs to the heart-disease class based on patient measurements and clinical attributes.
 
-## Что сделано
+The local dataset contains **918 rows and 12 columns**. The target column is `HeartDisease`.
 
-- EDA и проверка качества данных
-- Feature Engineering и масштабирование признаков
-- Сравнение моделей: Logistic Regression, Random Forest, Gradient Boosting
-- Оценка по Accuracy, Precision, Recall, F1-score, ROC-AUC
-- Интерпретация с помощью SHAP
+## Problem
 
-## Результаты
+Build and evaluate a classification pipeline for a health-related prediction task. Such a model is a learning and research artifact; it is not a medical diagnostic tool.
 
-Random Forest показал высокий Recall, что позволяет эффективно выявлять пациентов из группы риска.
+## Workflow
 
-## Структура папки
+- Perform exploratory data analysis and check data quality.
+- Prepare categorical and numerical features.
+- Apply feature engineering and scaling where appropriate.
+- Compare Logistic Regression, Random Forest and Gradient Boosting.
+- Evaluate with Accuracy, Precision, Recall, F1-score and ROC-AUC.
+- Use SHAP to inspect feature contributions and model behaviour.
+
+## Results
+
+The original project notes report that Random Forest achieved a high Recall. No exact metric values are provided in the checked-in README, so a numeric score is intentionally not stated here.
+
+For a recruiter-ready presentation, publish the full test-set metric table and a confusion matrix, and explain how the decision threshold was selected.
+
+## Data
+
+The repository includes [`data/heart.csv`](data/heart.csv), with 918 observations and 12 columns. The target is `HeartDisease`.
+
+## Code and notebook
+
+[Open Heart Disease Prediction notebook in Google Colab](https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D)
+
+The notebook is hosted externally in Colab; it is not included in the current repository snapshot.
+
+## Repository structure
 
 ```text
 03_heart_disease/
 ├── README.md
+├── README.ru.md
 └── data/
     └── heart.csv
 ```
 
-## Код
+## Responsible-use note
 
-Полный ноутбук: [Google Colab](https://colab.research.google.com/drive/1BK5wZVz1gSiwCjOp_dZ-dzG_UmwDS47D)
-
-## Датасет
-
-Файл `data/heart.csv`
+This is an educational machine-learning project. It must not be used to diagnose, screen or make treatment decisions for real people. Clinical use would require representative data, external validation, regulatory review and qualified medical oversight.
