@@ -36,7 +36,8 @@ Recall выбран приоритетной метрикой, чтобы сни
 
 В репозитории находится `data/train.csv` (165 034 строки, 14 столбцов). Целевая переменная — `Exited`.
 
-- [Открыть датасет](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/projects/01_bank_churn/data/train.csv)
+- [Открыть локальный датасет](data/train.csv)
+- [Открыть датасет на GitHub](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/projects/01_bank_churn/data/train.csv)
 
 Перед распространением или повторным использованием датасета за пределами портфолио проверьте условия его лицензии.
 
@@ -44,7 +45,7 @@ Recall выбран приоритетной метрикой, чтобы сни
 
 Полный ноутбук размещён в Google Colab:
 
-[Открыть ноутбук Bank Customer Churn](https://colab.research.google.com/drive/1p40UtKlxW2FZkX7xY11Acabu92LQJ6VH)
+[Открыть ноутбук Bank Customer Churn](https://colab.research.google.com/drive/1yOYYVbGddnBF-XQvYVJmoRyFR3zp1L_L)
 
 В текущей версии репозитория находятся датасет и README; сам ноутбук доступен во внешнем Colab.
 
@@ -57,3 +58,7 @@ Recall выбран приоритетной метрикой, чтобы сни
 └── data/
     └── train.csv
 ```
+
+## Примечание
+
+Это учебный проект для портфолио, а не внедрённая банковская система принятия решений. Использование прогнозов для реальных решений о клиентах требует независимой проверки, контроля качества и оценки справедливости модели.

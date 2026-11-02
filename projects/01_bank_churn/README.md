@@ -36,7 +36,8 @@ Recall was selected as the priority metric to reduce missed churn cases. The pro
 
 The repository includes `data/train.csv` (165,034 rows, 14 columns). The target is `Exited`.
 
-- [Open the dataset](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/projects/01_bank_churn/data/train.csv)
+- [Open the local dataset](data/train.csv)
+- [Open the dataset on GitHub](https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov/blob/main/projects/01_bank_churn/data/train.csv)
 
 Check the original dataset terms before redistributing or reusing the data outside this portfolio.
 
@@ -44,7 +45,7 @@ Check the original dataset terms before redistributing or reusing the data outsi
 
 The full notebook is available in Google Colab:
 
-[Open Bank Customer Churn notebook](https://colab.research.google.com/drive/1p40UtKlxW2FZkX7xY11Acabu92LQJ6VH)
+[Open Bank Customer Churn notebook](https://colab.research.google.com/drive/1yOYYVbGddnBF-XQvYVJmoRyFR3zp1L_L)
 
 The current portfolio snapshot contains the dataset and this project README; the notebook is hosted externally in Colab.
 
@@ -57,3 +58,7 @@ The current portfolio snapshot contains the dataset and this project README; the
 └── data/
     └── train.csv
 ```
+
+## Notes
+
+This is an educational portfolio project, not a deployed banking decision system. Predictions should not be used for real customer decisions without independent validation, governance and fairness checks.
