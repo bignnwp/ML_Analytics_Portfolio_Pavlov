@@ -21,6 +21,7 @@ I build applied data science and machine learning projects, covering exploratory
 - [All Projects](#all-projects)
 - [Repository Structure](#repository-structure)
 - [How to Explore the Projects](#how-to-explore-the-projects)
+- [Reproducibility](#reproducibility)
 - [Contact](#contact)
 
 ## Technical Skills
@@ -162,6 +163,42 @@ Project: [`projects/07_authorship_attribution/`](projects/07_authorship_attribut
 5. For the production service, follow the setup instructions in the [dedicated repository](https://github.com/bignnwp/churn_ml_production).
 
 The root `requirements.txt` contains a shared set of Python dependencies for the portfolio. Individual projects may require additional setup; check each project's documentation before running it. Dataset availability and usage terms remain subject to the original data sources.
+
+## Reproducibility
+
+This portfolio is designed so that experiments can be inspected and, where possible, re-run with minimal friction. The current setup is as follows:
+
+| Component | Status | Notes |
+|---|---|---|
+| Shared dependencies | Available | Root `requirements.txt` covers the common Python stack |
+| Local datasets | Partially available | CSV / XLSX files are included for most projects under `projects/*/data/` |
+| Notebooks | Mixed | One notebook is stored in the repository (`04_supermarket_analysis`); the remaining experiments are hosted in Google Colab and linked from each project README |
+| Production service | Fully reproducible | Separate repository with Poetry, Docker, Pytest, CI and explicit setup instructions |
+| Random seeds / validation protocol | Documented per project | See individual project READMEs for split strategy, metrics and any seed usage |
+
+### How to reproduce an experiment
+
+1. **Clone the repository** and install the shared dependencies:
+   ```bash
+   git clone https://github.com/bignnwp/ML_Analytics_Portfolio_Pavlov.git
+   cd ML_Analytics_Portfolio_Pavlov
+   python -m venv .venv
+   source .venv/bin/activate   # Windows: .venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+2. **Open the project folder** and read its README for data location, metric definitions and any extra packages.
+3. **For Colab-based projects**: open the linked notebook, upload the local data files from `projects/<name>/data/` if they are not already mounted, and run the cells in order.
+4. **For the supermarket analysis**: run the notebook in `projects/04_supermarket_analysis/notebooks/` against the CSV in the same project’s `data/` folder.
+5. **For the production churn service**: follow the instructions in the dedicated repository (Poetry / Docker / Pytest).
+
+### Known limitations
+
+- Most modelling notebooks currently live in Google Colab rather than in this repository. Colab links may require a Google account and can change over time.
+- Random seeds and full hyperparameter search spaces are documented inside the notebooks; they are not yet centralised in a single configuration file.
+- Computer-vision outputs (processed video, heatmaps) are described in the project README but are not stored in the archive because of size.
+- Dataset licensing remains governed by the original sources; redistributing the data outside this portfolio may require additional checks.
+
+Improving in-repository notebook coverage and adding pinned environment files (`environment.yml` / lock files) is planned as a next step.
 
 ## Contact
 
