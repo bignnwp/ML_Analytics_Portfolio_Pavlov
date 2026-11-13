@@ -28,7 +28,7 @@
 
 | Направление | Инструменты и методы |
 |---|---|
-| Программирование и данные | Python, Pandas, NumPy, SciPy |
+| Programming and data | Python, Pandas, NumPy, SciPy, SQL, PostgreSQL |
 | Machine Learning | scikit-learn, XGBoost, LightGBM, CatBoost, imbalanced-learn |
 | Интерпретация моделей | SHAP, важность признаков, classification report |
 | Статистика | t-тест Уэлча, χ²-тест, размеры эффекта, поправка на множественные сравнения |
@@ -111,6 +111,19 @@
 
 Проект: [`projects/07_authorship_attribution/`](projects/07_authorship_attribution/) · [Google Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1)
 
+
+### 6. HR Analytics SQL Project
+
+**Направление:** Data Analytics · SQL Engineering  
+**Инструменты:** PostgreSQL, оконные функции, массивы, CTE, представления
+
+- Спроектирована реалистичная HR-схема с историей окладов, проектами, грейдами и оргструктурой.
+- Реализованы продакшен-стиль запросы по вакансиям, точным повышениям на 25%, текущему окладу и загрузке проектов.
+- Создано переиспользуемое представление `employee_info`, которое корректно берёт текущий оклад из истории и учитывает руководителей проектов.
+- Добавлена дополнительная аналитика: траектории зарплат, нагрузка руководителей, распределение по грейдам и стоимость проекта на человека.
+
+Проект: [`projects/10_hr_analytics_sql/`](projects/10_hr_analytics_sql/)
+
 ## Все проекты
 
 | № | Проект | Направление | Код / описание |
@@ -124,6 +137,7 @@
 | 07 | Определение авторства текстов | NLP, TF-IDF, символьные n-граммы | [Проект](projects/07_authorship_attribution/) · [Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1) |
 | 08 | Прогнозирование направления цены | OHLCV, бинарная классификация, time-series CV | [Проект](projects/08_price_direction/) · [Colab](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) |
 | 09 | Прогнозирование температуры в Дели | Временные ряды, статистические и ML-модели | [Проект](projects/09_delhi_temperature/) · [Colab](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO) |
+| 10 | HR Analytics SQL | PostgreSQL, оконные функции, представления, история окладов | [Проект](projects/10_hr_analytics_sql/) |
 
 ### Дополнительные результаты
 
@@ -151,7 +165,8 @@
     ├── 06_vehicle_tracking/
     ├── 07_authorship_attribution/
     ├── 08_price_direction/
-    └── 09_delhi_temperature/
+    ├── 09_delhi_temperature/
+    └── 10_hr_analytics_sql/
 ```
 
 ## Как изучить и запустить проекты

@@ -28,7 +28,7 @@ I build applied data science and machine learning projects, covering exploratory
 
 | Area | Tools and methods |
 |---|---|
-| Programming and data | Python, Pandas, NumPy, SciPy |
+| Programming and data | Python, Pandas, NumPy, SciPy, SQL, PostgreSQL |
 | Machine Learning | scikit-learn, XGBoost, LightGBM, CatBoost, imbalanced-learn |
 | Model interpretation | SHAP, feature importance, classification reports |
 | Statistics | Welch's t-test, chi-square test, effect sizes, multiple-testing correction |
@@ -111,6 +111,19 @@ Project: [`projects/09_delhi_temperature/`](projects/09_delhi_temperature/) · [
 
 Project: [`projects/07_authorship_attribution/`](projects/07_authorship_attribution/) · [Google Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1)
 
+
+### 6. HR Analytics SQL Project
+
+**Area:** Data Analytics · SQL Engineering  
+**Tools:** PostgreSQL, window functions, arrays, CTEs, views
+
+- Designed a realistic HR schema with salary history, projects, grades and org structure.
+- Implemented production-style queries for vacancies, exact 25% raises, current salary derivation and project staffing.
+- Built a reusable `employee_info` view that correctly handles current salary from history and includes project managers.
+- Added extra analytics: salary trajectories, manager workload, grade distribution and cost-per-employee.
+
+Project: [`projects/10_hr_analytics_sql/`](projects/10_hr_analytics_sql/)
+
 ## All Projects
 
 | # | Project | Focus | Code / Details |
@@ -124,6 +137,7 @@ Project: [`projects/07_authorship_attribution/`](projects/07_authorship_attribut
 | 07 | Authorship Attribution | NLP, TF-IDF, character n-grams | [Project](projects/07_authorship_attribution/) · [Colab](https://colab.research.google.com/drive/1I6CeNTaHwFCc4JJNfxrU_KRRlbilzE-1) |
 | 08 | Financial Price Direction Prediction | OHLCV, binary classification, time-series CV | [Project](projects/08_price_direction/) · [Colab](https://colab.research.google.com/drive/1DsQn-OnVZa8gE4AQB_5nznn45KgdhXxO) |
 | 09 | Delhi Temperature Forecasting | Time series, statistical and ML models | [Project](projects/09_delhi_temperature/) · [Colab](https://colab.research.google.com/drive/1xYQmNzH5UFD2ZAxfF8VdweLd3cStbBzO) |
+| 10 | HR Analytics SQL | PostgreSQL, window functions, views, salary history | [Project](projects/10_hr_analytics_sql/) |
 
 ### Selected additional results
 
@@ -151,7 +165,8 @@ Project: [`projects/07_authorship_attribution/`](projects/07_authorship_attribut
     ├── 06_vehicle_tracking/
     ├── 07_authorship_attribution/
     ├── 08_price_direction/
-    └── 09_delhi_temperature/
+    ├── 09_delhi_temperature/
+    └── 10_hr_analytics_sql/
 ```
 
 ## How to Explore the Projects
